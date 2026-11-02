@@ -17,5 +17,5 @@ jobs:
   build:
     uses: lefred/mariadb-plugin-ci/.github/workflows/build-plugin-new.yml@main
     with:
-      mariadb_versions: 77069
+      mariadb_versions: 77066
       test_suites: greeting
