@@ -1,0 +1,35 @@
+#
+# GREETING() returns the message set in greeting_config_file
+#
+SELECT @@greeting_config_file;
+@@greeting_config_file
+MYSQLTEST_VARDIR/tmp/greeting.conf
+SELECT GREETING();
+GREETING()
+Hello, Marina!
+# The file is read on every call
+SELECT CONCAT('[', GREETING(), ']');
+CONCAT('[', GREETING(), ']')
+[  quoted, with spaces  ]
+# No message: NULL and a warning
+SELECT GREETING();
+GREETING()
+NULL
+Warnings:
+Warning	1105	GREETING(): MYSQLTEST_VARDIR/tmp/greeting.conf sets no message
+# A line that is not key = value
+SELECT GREETING();
+GREETING()
+NULL
+Warnings:
+Warning	1105	GREETING(): MYSQLTEST_VARDIR/tmp/greeting.conf:1: expected key = value
+# No file
+SELECT GREETING();
+GREETING()
+NULL
+Warnings:
+Warning	1105	GREETING(): cannot open MYSQLTEST_VARDIR/tmp/greeting.conf: No such file or directory
+SELECT GREETING('x');
+ERROR 42000: Incorrect parameter count in the call to native function 'GREETING'
+CREATE TABLE t1 (a INT, b VARCHAR(100) AS (GREETING()) STORED);
+ERROR HY000: Function or expression 'greeting()' cannot be used in the GENERATED ALWAYS AS clause of `b`

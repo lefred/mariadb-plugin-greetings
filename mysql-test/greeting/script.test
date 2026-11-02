@@ -1,0 +1,24 @@
+--echo #
+--echo # greeting.sql creates greeting.say_hello(), which calls GREETING()
+--echo #
+
+if (!$GREETING_SQL)
+{
+  --skip greeting.sql not found
+}
+
+let $conf= $MYSQLTEST_VARDIR/tmp/greeting.conf;
+--write_file $conf
+message = Hello from a stored procedure!
+EOF
+
+--exec $MYSQL < $GREETING_SQL
+--echo # Running the script twice is harmless
+--exec $MYSQL < $GREETING_SQL
+
+SELECT ROUTINE_SCHEMA, ROUTINE_NAME, SECURITY_TYPE, ROUTINE_COMMENT
+  FROM information_schema.ROUTINES WHERE ROUTINE_SCHEMA = 'greeting';
+CALL greeting.say_hello();
+
+DROP DATABASE greeting;
+--remove_file $conf

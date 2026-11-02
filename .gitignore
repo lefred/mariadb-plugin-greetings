@@ -1,0 +1,3 @@
+# Written into the sources by the Foundry CMake package
+mariadb-plugin-greeting-*.yml
+/build*/
