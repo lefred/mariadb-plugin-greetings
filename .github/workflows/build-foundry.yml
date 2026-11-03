@@ -19,3 +19,5 @@ jobs:
     with:
       mariadb_versions: 77101
       test_suites: greeting
+      almalinux_version: "10"
+      allow_partial_release: true
