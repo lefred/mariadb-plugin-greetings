@@ -19,8 +19,8 @@ project(greeting)
 
 set(PLUGIN_NAME "greeting")
 set(PLUGIN_AUTHOR "lefred")
-set(PLUGIN_VERSION "1.0.0")
-set(PLUGIN_HEX_VERSION "0x0100")
+set(PLUGIN_VERSION "1.0.1")
+set(PLUGIN_HEX_VERSION "0x0101")
 set(PLUGIN_DESCRIPTION "Sample plugin whose GREETING() function returns the message set in its config file")
 
 #
