@@ -36,9 +36,13 @@ MARIADB_ADD_PLUGIN(${PLUGIN_NAME} greeting.cc
         DESCRIPTION "${PLUGIN_DESCRIPTION}"
 )
 
+# Where Marina's installer accepts a plugin's own files for any build, even one
+# below verified: <etc>/mariadb/<name>/ (INSTALL_SYSCONFDIR is /etc for RPM and
+# DEB, etc in a tarball) and share/mariadb/<name>/ (INSTALL_SHAREDIR is plain
+# share in every layout, so it is written out).
 install(FILES greeting.conf
-        DESTINATION ${INSTALL_SYSCONFDIR}/${PLUGIN_NAME}/)
+        DESTINATION ${INSTALL_SYSCONFDIR}/mariadb/${PLUGIN_NAME}/)
 install(FILES greeting.sql
-        DESTINATION ${INSTALL_SHAREDIR}/${PLUGIN_NAME}/)
+        DESTINATION share/mariadb/${PLUGIN_NAME}/)
 
 include(CPack)
