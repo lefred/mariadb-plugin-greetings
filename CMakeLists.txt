@@ -37,8 +37,8 @@ MARIADB_ADD_PLUGIN(${PLUGIN_NAME} greeting.cc
 )
 
 install(FILES greeting.conf
-        DESTINATION ${INSTALL_SYSCONFDIR})
+        DESTINATION ${INSTALL_SYSCONFDIR}/${PLUGIN_NAME}/)
 install(FILES greeting.sql
-        DESTINATION ${INSTALL_SHAREDIR})
+        DESTINATION ${INSTALL_SHAREDIR}/${PLUGIN_NAME}/)
 
 include(CPack)
