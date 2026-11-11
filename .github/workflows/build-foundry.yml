@@ -23,6 +23,7 @@ jobs:
         77522
         77100
         77144
+        13.0.2
       #test_suites: greeting
       almalinux_version: "10"
       allow_partial_release: true
