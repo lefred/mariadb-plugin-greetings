@@ -18,8 +18,7 @@ The plugin provides a script to install a stored procedure:
 mariadb < /usr/share/mariadb/greeting/greeting.sql
 ```
 
-
-# Usage
+# USAGE
 
 ```sql
 SELECT GREETING();
