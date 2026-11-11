@@ -19,7 +19,7 @@ mariadb < /usr/share/mariadb/greeting/greeting.sql
 ```
 
 
-## Usage
+# Usage
 
 ```sql
 SELECT GREETING();
