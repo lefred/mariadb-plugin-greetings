@@ -18,12 +18,11 @@ jobs:
     uses: lefred/mariadb-plugin-ci/.github/workflows/build-plugin-new.yml@v1
     with:
       mariadb_versions: | 
-        77519
-        77521
-        77522
-        77100
-        77144
-        13.0.2
+        11.4
+        11.8
+        12.3
+        13.1
+        13.2
       #test_suites: greeting
       almalinux_version: "10"
       allow_partial_release: true
