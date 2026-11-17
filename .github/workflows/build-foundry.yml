@@ -21,8 +21,8 @@ jobs:
         11.4
         11.8
         12.3
-        13.1
-        13.2
+        77897   # 13.1.2
+        77899   # 13.2.1
       #test_suites: greeting
       almalinux_version: "10"
       allow_partial_release: true
